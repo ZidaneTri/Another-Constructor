@@ -15,9 +15,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // @formatter:off
-        http.antMatcher("/**")
+        http
                 .authorizeRequests().antMatchers("/lol.html").authenticated()
-                .antMatchers("/", "/auth/**", "/webjars/**", "/js/**", "/signup**").permitAll()
+                .antMatchers("/", "/auth/**", "/webjars/**", "/js/**", "/signup").permitAll()
                 .anyRequest().authenticated()
                 .and().apply(new SpringSocialConfigurer());
         // @formatter:on
