@@ -6,10 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-
-import javax.servlet.http.HttpSession;
 import java.security.Principal;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
