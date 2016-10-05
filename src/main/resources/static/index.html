@@ -3,6 +3,8 @@
 <head>
     <!-- Meta tags !-->
     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap-social/bootstrap-social.css" />
+    <link rel="stylesheet" type="text/css" href="/webjars/font-awesome/4.6.3/css/font-awesome.min.css" />
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/webjars/angularjs/angular.min.js"></script>
@@ -27,20 +29,20 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="/">Home</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right" >
                 <li class="dropdown" ng-show="!authenticated" >
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <form action="/signin/twitter" method="post">
-                                <button type="submit">Login Twi</button>
+                            <form action="/signin/facebook" method="post">
+                                <button class="btn btn-block btn-social btn-facebook" type="submit"><i class="fa fa-facebook"></i>Sign in with Facebook</button>
                             </form>
                         </li>
                         <li>
-                            <form action="/signin/facebook" method="post">
-                                <button type="submit">Login FB</button>
+                            <form action="/signin/twitter" method="post">
+                                <button class="btn btn-block btn-social btn-twitter" type="submit"><i class="fa fa-twitter"></i>Sign in with Twitter</button>
                             </form>
                         </li>
                     </ul>
