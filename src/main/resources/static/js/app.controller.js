@@ -1,16 +1,16 @@
 angular.
     module('app').
     controller("home", function($http, $location, $scope) {
-        // $http.get("/user").success(function(data) {
-        //     if (data.name) {
-        //         $scope.user = data.name;
-        //         $scope.authenticated = true;
-        //     } else {
-        //         notAuthenticated()
-        //     }
-        // }).error(function() {
-        //     notAuthenticated()
-        // });
+        $http.get("/user").success(function(data) {
+            if (data.name) {
+                $scope.user = data.name;
+                $scope.authenticated = true;
+            } else {
+                notAuthenticated()
+            }
+        }).error(function() {
+            notAuthenticated()
+        });
 
         var notAuthenticated = function() {
             $scope.user = "N/A";
