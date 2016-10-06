@@ -2,15 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Meta tags !-->
-    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap-social/bootstrap-social.css" />
-    <link rel="stylesheet" type="text/css" href="/webjars/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script type="text/javascript" src="/webjars/angularjs/angular.min.js"></script>
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/webjars/angularjs/angular.min.js"></script>
+    <script type="text/javascript" src="webjars/angular-route/1.5.8/angular-route.js"></script>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap-social/bootstrap-social.css" />
+    <link rel="stylesheet" type="text/css" href="/webjars/font-awesome/css/font-awesome.min.css" />
+
     <script src='js/app.module.js'></script>
     <script src='js/app.config.js'></script>
     <script src='js/app.controller.js'></script>
+    <script src='js/main/main.module.js'></script>
+    <script src='js/user/user.module.js'></script>
     <style>
         body { padding-top: 70px; }
     </style>
@@ -29,11 +33,12 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
-                <li class="active"><a href="/">Home</a></li>
+                <li class="active"><a href="#/">Home</a></li>
+                <li class="active"><a href="#/userpage">User</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right" >
                 <li class="dropdown" ng-show="!authenticated" >
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login<span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li>
                             <form action="/signin/facebook" method="post">
@@ -57,6 +62,6 @@
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-<hello></hello>
+<div ng-view></div>
 </body>
 </html>
