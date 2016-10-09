@@ -7,8 +7,6 @@
     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap-social/bootstrap-social.css" />
     <link rel="stylesheet" type="text/css" href="/webjars/font-awesome/css/font-awesome.min.css" />
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/demo-framework.css"/>
-    <link rel="stylesheet" type="text/css" href="css/drag.css"/>
     <script type="text/javascript" src="/webjars/jquery/3.1.1/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script src="js/summernote.js"></script>
@@ -23,12 +21,13 @@
     <script src='js/app.controller.js'></script>
     <script src='js/main/main.module.js'></script>
     <script src='js/user/user.module.js'></script>
-    <script src='js/drag/drag.module.js'></script>
+    <script src='js/create/create.module.js'></script>
+    <script src='js/list/list.module.js'></script>
     <style>
         body { padding-top: 70px; }
     </style>
 </head>
-<body ng-app="app" ng-controller="home as home">
+<body ng-app="app" ng-controller="home as home" ng-controller="profileUserCtrl">
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -44,7 +43,7 @@
             <ul class="nav navbar-nav navbar-left">
                 <li class="active"><a href="#/">Home</a></li>
                 <li class="active"><a href="#/userpage">User</a></li>
-                <li class="active"><a href="#/drag">User</a></li>
+                <li class="active"><a href="#/create/site/3">Create</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right" >
                 <li class="dropdown" ng-show="!authenticated" >
@@ -69,7 +68,7 @@
                     </ul>
                 </li>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
     </div>
 </nav>
 <div ng-view></div>
