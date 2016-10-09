@@ -1,6 +1,31 @@
 <div class="jumbotron">
     <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is USER page</p>
+        <h1>Hello, {{site[0].user.name}}</h1>
+        <p>This is your sites. You can choose and edit created sites or create new.</p>
+        <table st-table="info" st-safe-src="site" class="table table-striped">
+            <thead>
+            <tr>
+                <th st-sort="item.id">Id</th>
+                <th st-sort="item.siteName">Sites</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in info">
+                <td>{{ item.id }}</td>
+                <td>{{ item.siteName }}</td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-warning">
+                        Edit
+                    </button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-danger">
+                        <i class="glyphicon glyphicon-remove-circle">
+                        </i>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>
