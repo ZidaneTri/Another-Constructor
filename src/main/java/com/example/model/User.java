@@ -20,6 +20,9 @@ public class User {
     @Column
     private String role;
 
+//    @OneToMany(mappedBy = "User", cascade = CascadeType.ALL)
+//    private Set<Site> sites;
+
     public Long getId() {
         return id;
     }
@@ -51,4 +54,12 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
+
+//    public Set<Site> getSites() {
+//        return sites;
+//    }
+//
+//    public void setSites(Set<Site> sites) {
+//        this.sites = sites;
+//    }
 }

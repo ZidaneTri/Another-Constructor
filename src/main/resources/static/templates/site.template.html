@@ -1,9 +1,22 @@
 <div class="jumbotron">
     <div class="container">
-        <ul>
-            <li ng-repeat="item in site">
-                {{ item.siteName }}
-            </li>
-        </ul>
+        <p>The List of all sites!</p>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Sites</th>
+                    <th>Users</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in site">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.siteName }}</td>
+                    <td>{{ item.user.name }}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
