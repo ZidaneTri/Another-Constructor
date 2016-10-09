@@ -32,7 +32,12 @@ public class SiteServiceImpl implements SiteService{
     }
 
     @Override
-    public List<Site> findById(long id){
+    public void delete(long id) {
+        siteRepository.delete(id);
+    }
+
+    @Override
+    public Site findById(long id){
         return siteRepository.findById(id);
     }
 
