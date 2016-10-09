@@ -11,6 +11,9 @@ angular.
                     when('/userpage', {
                           template: '<user></user>'
                     }).
+                    when('/drag', {
+                        template: '<drag></drag>'
+                    }).
                     otherwise('/');
         }
         );

@@ -72,7 +72,7 @@ public class SignupController {
         authorities.add(user);
         if(Objects.equals(userService.findByUserId(id).getRole(), "ROLE_ADMIN"))
             authorities.add(admin);
-        Authentication authentication = new UsernamePasswordAuthenticationToken(userProfile.getName(), null, authorities);
+        Authentication authentication = new UsernamePasswordAuthenticationToken(userProfile.getName(), id, authorities);
         SecurityContextHolder.getContext().setAuthentication(authentication);
     }
 }
