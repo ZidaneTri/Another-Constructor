@@ -7,7 +7,7 @@ import java.util.List;
 
 
 public interface SiteService {
-    List<Site> findBySiteId(Long siteId);
+    List<Site> findBySiteId(long siteId);
 
     void save(Site site);
 

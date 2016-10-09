@@ -7,5 +7,5 @@ import java.util.List;
 
 
 public interface SiteRepository extends JpaRepository<Site,Long> {
-    List<Site> findBySiteId(Long siteId);
+    List<Site> findBySiteId(long siteId);
 }

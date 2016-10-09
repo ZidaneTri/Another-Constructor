@@ -11,7 +11,7 @@ public class Site {
     private Long id;
 
     @Column(unique=true)
-    private String siteId;
+    private long siteId;
 
     @Column
     private String siteName;
@@ -30,7 +30,7 @@ public class Site {
         return content;
     }
 
-    public String getSiteId() {
+    public long getSiteId() {
         return siteId;
     }
 
@@ -50,7 +50,7 @@ public class Site {
         this.id = id;
     }
 
-    public void setSiteId(String siteId) {
+    public void setSiteId(long siteId) {
         this.siteId = siteId;
     }
 
