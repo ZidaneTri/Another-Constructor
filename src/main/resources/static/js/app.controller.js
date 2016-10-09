@@ -18,11 +18,11 @@ angular.
         }
 
         $scope.logout = function() {
-            $http.post('logout', {}).success(function() {
+            $http.post('/logout', {}).success(function() {
                 $scope.authenticated = false;
                 $location.path("/");
             }).error(function(data) {
-                console.log("Logout failed")
+                console.log("Logout failed");
                 $scope.authenticated = false;
             });
         };
