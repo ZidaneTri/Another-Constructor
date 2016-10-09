@@ -24,7 +24,7 @@ public class PageController {
     @Autowired
     PageService pageService;
 
-    @RequestMapping(value = "/site/{site_name}", method = RequestMethod.GET)
+    @RequestMapping(value = "/site/{site_name}/page", method = RequestMethod.GET)
     public @ResponseBody
     List<Page> getSitePages(@PathVariable("site_name") Site site){
         List<Page> pages;
@@ -32,9 +32,9 @@ public class PageController {
         return pages;
     }
 
-    @RequestMapping(value = "/site/{site_name}/{page_number}", method = RequestMethod.GET)
+    @RequestMapping(value = "/site/page/{page_number}", method = RequestMethod.GET)
     public @ResponseBody
-    List<Page> getPage(@PathVariable("site_name") Site site, @PathVariable("page_number")long id){
+    List<Page> getPage(@PathVariable("page_number")long id){
         List<Page> pages;
         pages = pageService.findById(id);
         return pages;
