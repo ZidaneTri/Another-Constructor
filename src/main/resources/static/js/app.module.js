@@ -5,5 +5,5 @@ angular.module('app', [
     'summernote',
     'main',
     'user',
-    'drag'
+    'create'
 ]);
