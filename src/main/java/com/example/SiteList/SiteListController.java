@@ -2,6 +2,7 @@ package com.example.SiteList;
 
 import com.example.model.Site;
 import com.example.repository.SiteRepository;
+import com.example.service.SiteService;
 import com.example.service.SiteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
