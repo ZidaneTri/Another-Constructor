@@ -3,21 +3,24 @@
         <h1>Hello, stranger.</h1>
         <p>You can view created sites or sign in and create your own site</p>
         <p>The list of created sites</p>
-        <table class="table table-striped">
+        <table st-table="info" st-safe-src="site" class="table table-striped">
             <thead>
             <tr>
-                <th>Id</th>
-                <th>Sites</th>
-                <th>Users</th>
+                <th st-sort="id">Id</th>
+                <th st-sort="siteName">Site</th>
+                <th st-sort="user.name">User</th>
+            </tr>
+            <tr>
+                <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="item in site">
+            <tr ng-repeat="item in info">
                 <td>{{ item.id }}</td>
                 <td>{{ item.siteName }}</td>
                 <td>{{ item.user.name }}</td>
             </tr>
             </tbody>
-            </table>
+        </table>
     </div>
 </div>
