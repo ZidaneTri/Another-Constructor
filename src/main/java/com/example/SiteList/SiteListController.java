@@ -20,7 +20,7 @@ public class SiteListController {
     @RequestMapping(value = "/site/info/{id}", method = RequestMethod.GET)
     public List<Site> ViewSites(HttpSession httpSession, @PathVariable("id") long id){
         List<Site> sites;
-        sites = siteService.findBySiteId(id);
+        sites = siteService.findBySiteId((long) 1);
         return sites;
     }
 }
