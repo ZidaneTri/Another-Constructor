@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/")
-public class SiteListController {
+public class SiteController {
 
     @Autowired
     SiteService siteService;
@@ -22,7 +23,7 @@ public class SiteListController {
     UserService userService;
 
     @Autowired
-    SiteListController(SiteService siteService){this.siteService = siteService;}
+    SiteController(SiteService siteService){this.siteService = siteService;}
 
     @RequestMapping(value = "/site/get_all", method = RequestMethod.GET)
     public @ResponseBody List<Site> getAllSites(){
@@ -42,9 +43,28 @@ public class SiteListController {
 
     @RequestMapping(value = "/site/info/{id}", method = RequestMethod.GET)
     public @ResponseBody
-    List<Site> ViewSite(HttpSession httpSession, @PathVariable("id") long id){
-        List<Site> sites;
-        sites = siteService.findById(id);
-        return sites;
+    Site ViewSite(HttpSession httpSession, @PathVariable("id") long id){
+        Site site;
+        site = siteService.findById(id);
+        return site;
+    }
+
+    @RequestMapping(value = "/site/delete/{id}", method = RequestMethod.GET)
+    public void deleteSite(@PathVariable("id")long id){
+        siteService.delete(id);
+    }
+
+    @RequestMapping(value = "/site/update", method = RequestMethod.POST)
+    public void updateSite(@RequestBody Map map){
+        Site site = siteService.findById((Long)map.get("id"));
+        siteService.save(site);
+    }
+
+    @RequestMapping(value = "/site/save", method = RequestMethod.POST)
+    public void saveSite(@RequestBody Map map, Authentication principal){
+        Site site = new Site();
+        site.setSiteName((String)map.get("name"));
+        site.setUser(userService.findByUserId((String)principal.getCredentials()));
+        siteService.save(site);
     }
 }
