@@ -18,15 +18,9 @@ import java.security.Principal;
 @RequestMapping("/userdata")
 public class UserDataController {
 
-    private final ProviderSignInUtils signInUtils;
-
     @Autowired
     UserService userService;
 
-    @Autowired
-    public UserDataController(ConnectionFactoryLocator connectionFactoryLocator, UsersConnectionRepository connectionRepository) {
-        signInUtils = new ProviderSignInUtils(connectionFactoryLocator, connectionRepository);
-    }
     @RequestMapping(method = RequestMethod.GET)
     public User sendData(Authentication principal) {
         User user = userService.findByUserId((String) principal.getCredentials());
