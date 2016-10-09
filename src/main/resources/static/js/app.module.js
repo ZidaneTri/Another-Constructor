@@ -1,8 +1,8 @@
 angular.module('app', [
     'ngRoute',
     'ngSanitize',
-    'dndLists',
     'summernote',
+    'smart-table',
     'main',
     'user',
     'create'

@@ -11,9 +11,10 @@ public class TestController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "/data/user/{id}", method = RequestMethod.GET)
-    public User session(@PathVariable("id") int id) {
-        User user = userService.findById(Integer.toUnsignedLong(id));
-        return user;
+    @RequestMapping(value = "/data", method = RequestMethod.POST)
+    public String session(@RequestBody Object car) {
+        car.getClass();
+        car.toString();
+        return "user";
     }
 }
