@@ -10,7 +10,7 @@ import java.util.List;
 
 
 public interface SiteRepository extends JpaRepository<Site,Long> {
-    List<Site> findById(long Id);
+    Site findById(long Id);
     List<Site> findAll();
 
     List<Site> findByUser(User user);
