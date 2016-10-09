@@ -1,6 +1,12 @@
-var heh = angular.module('main', []);
+var mainModule = angular.module('main', []);
 
-heh.component('main', {
-    templateUrl: '/templates/main.template.html'
+mainModule.component('main', {
+    templateUrl: '/templates/main.template.html',
+    controller: function ($scope,$http) {
+        $scope.site = [];
+        $http.get('http://localhost:8080/site/get_all').success(function (data) {
+            $scope.site = data;
+        });
+    }});
 
-    });
+

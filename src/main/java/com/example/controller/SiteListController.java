@@ -5,6 +5,7 @@ import com.example.model.User;
 import com.example.service.SiteService;
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -30,11 +31,11 @@ public class SiteListController {
         return sites;
     }
 
-    @RequestMapping(value = "/site/id_user/{id}", method = RequestMethod.GET)
-    public @ResponseBody List<Site> getUserSites(@PathVariable("id") String idUser){
+    @RequestMapping(value = "/site/get_user_data", method = RequestMethod.GET)
+    public @ResponseBody List<Site> getUserSites(Authentication principal){
         List<Site> sites;
         User user;
-        user = userService.findByUserId(idUser);
+        user = userService.findByUserId((String)principal.getCredentials());
         sites = siteService.findByUser(user);
         return sites;
     }
