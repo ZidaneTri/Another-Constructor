@@ -1,23 +1,12 @@
-var heh = angular.module('main', []);
+var mainModule = angular.module('main', []);
 
-heh.component('main', {
+mainModule.component('main', {
     templateUrl: '/templates/main.template.html',
-    controller: function ($http, $scope) {
+    controller: function ($scope,$http) {
+        $scope.site = [];
+        $http.get('http://localhost:8080/site/get_all').success(function (data) {
+            $scope.site = data;
+        });
+    }});
 
-        var samplejson = {
-            "kek": null,
-            "number": null,
-            "string": "Hello World"
-        };
 
-        $scope.logout = function() {
-            $http.post('/data', samplejson).success(function() {
-                console.log("RECIEVED")
-            }).error(function(data) {
-                console.log("fail")
-            });
-        };
-
-    }
-
-    });

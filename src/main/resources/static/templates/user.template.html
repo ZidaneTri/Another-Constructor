@@ -1,6 +1,20 @@
 <div class="jumbotron">
     <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is USER page</p>
+        <h1>Hello, {{site[0].user.name}}</h1>
+        <p>This is yout sites. You can choose and edit created sites or create new.</p>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Sites</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in site">
+                <td>{{ item.id }}</td>
+                <td>{{ item.siteName }}</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>
