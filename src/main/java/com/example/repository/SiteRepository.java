@@ -15,4 +15,6 @@ public interface SiteRepository extends JpaRepository<Site,Long> {
 
     List<Site> findByUser(User user);
 
+
+
 }

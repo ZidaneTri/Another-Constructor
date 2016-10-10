@@ -17,6 +17,9 @@ angular.
                     when('/create/site/', {
                         template: '<create></create>'
                     }).
+                    when('/edit/site/:siteId', {
+                        template: '<site></site>'
+                    }).
                     otherwise('/');
         }
         );

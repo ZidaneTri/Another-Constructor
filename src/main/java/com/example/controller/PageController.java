@@ -6,7 +6,6 @@ import com.example.service.PageService;
 import com.example.service.SiteService;
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,11 +23,10 @@ public class PageController {
     @Autowired
     PageService pageService;
 
-    @RequestMapping(value = "/site/{site_name}/pages", method = RequestMethod.GET)
-    public @ResponseBody
-    List<Page> getSitePages(@PathVariable("site_name") Site site){
+    @RequestMapping(value = "/site/pages/{site_id}", method = RequestMethod.GET)
+    public List<Page> getSitePages(@PathVariable("site_id") Long id){
         List<Page> pages;
-        pages = pageService.findBySite(site);
+        pages = pageService.findBySite(siteService.findById(id));
         return pages;
     }
 

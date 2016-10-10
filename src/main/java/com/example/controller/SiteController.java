@@ -45,7 +45,7 @@ public class SiteController {
 
     @RequestMapping(value = "/site/info/{id}", method = RequestMethod.GET)
     public @ResponseBody
-    Site ViewSite(HttpSession httpSession, @PathVariable("id") long id){
+    Site viewSite( @PathVariable("id") long id){
         Site site;
         site = siteService.findById(id);
         return site;

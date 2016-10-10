@@ -5,5 +5,6 @@ angular.module('app', [
     'smart-table',
     'main',
     'user',
-    'create'
+    'create',
+    'site'
 ]);
