@@ -14,7 +14,7 @@ angular.
                     when('/drag', {
                         template: '<drag></drag>'
                     }).
-                    when('/create/site/:siteId', {
+                    when('/create/site/', {
                         template: '<create></create>'
                     }).
                     otherwise('/');
