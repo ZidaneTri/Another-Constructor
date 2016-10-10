@@ -8,6 +8,7 @@ heh.component('page', {
         console.log(id);
 
         $scope.pageinfo = {
+            "id":null,
             "name": null,
             "content": null
         }

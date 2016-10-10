@@ -30,32 +30,35 @@ public class PageController {
         return pages;
     }
 
-    @RequestMapping(value = "/site/page/{page_number}", method = RequestMethod.GET)
+    @RequestMapping(value = "/site/page/{page_id}", method = RequestMethod.GET)
     public @ResponseBody
-    List<Page> getPage(@PathVariable("page_number")long id){
-        List<Page> pages;
-        pages = pageService.findById(id);
-        return pages;
+    Page getPage(@PathVariable("page_id")long id){
+        Page page;
+        page = pageService.findById(id);
+        return page;
     }
 
-    @RequestMapping(value = "/site/page/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/site/page/{id}/delete", method = RequestMethod.GET)
     public void deletePage(@PathVariable("id")long id){
         pageService.delete(id);
     }
 
-    @RequestMapping(value = "/site/page/update", method = RequestMethod.POST)
-    public void updatePage(@RequestBody Map map){
-        Page page = pageService.findById((Long)map.get("id")).get(0);
-        pageService.save(page);
-    }
 
-    @RequestMapping(value = "/site/page/{site_name}/save", method = RequestMethod.POST)
-    public void savePage(@RequestBody Map map,@PathVariable("site_name") long id){
-        Page page = new Page();
-        page.setContent((String)map.get("content"));
-        page.setPageName((String)map.get("name"));
-        page.setSite(siteService.findById(id));
-        pageService.save(page);
+    @RequestMapping(value = "/site/page/{site_id}/save", method = RequestMethod.POST)
+    public void savePage(@RequestBody Map map,@PathVariable("site_id") long id){
+        Page page;
+        if(map.get("id")!= null){
+            Long id1 = (Long) map.get("id");
+            page = pageService.findById(id1);
+            pageService.save(page);
+        }
+        else {
+            page = new Page();
+            page.setContent((String) map.get("content"));
+            page.setPageName((String) map.get("name"));
+            page.setSite(siteService.findById(id));
+            pageService.save(page);
+        }
     }
 
 }
