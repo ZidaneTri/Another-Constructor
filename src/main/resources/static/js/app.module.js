@@ -7,5 +7,7 @@ angular.module('app', [
     'user',
     'create',
     'site',
-    'page'
+    'page',
+    'pageupdate',
+    'show'
 ]);

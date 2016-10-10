@@ -23,6 +23,12 @@ angular.
                     when('/add/page/site/:siteId', {
                         template: '<page></page>'
                     }).
+                    when('/edit/page/:pageId', {
+                        template: '<pageupdate></pageupdate>'
+                    }).
+                    when('/show/site/:siteId', {
+                        template: '<show></show>'
+                    }).
                     otherwise('/');
         }
         );

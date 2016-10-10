@@ -11,6 +11,7 @@ heh.component('site', {
                 $scope.name = data.siteName;
                 $http.get('/site/pages/'+siteid).success(function (data) {
                     $scope.pages = data;
+                    console.log($scope.pages)
                 });
             }else {
                 alert("NOT YOUR SITE");

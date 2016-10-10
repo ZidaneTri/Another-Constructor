@@ -38,6 +38,7 @@ public class PageController {
         return page;
     }
 
+
     @RequestMapping(value = "/site/page/{id}/delete", method = RequestMethod.GET)
     public void deletePage(@PathVariable("id")long id){
         pageService.delete(id);
@@ -48,8 +49,10 @@ public class PageController {
     public void savePage(@RequestBody Map map,@PathVariable("site_id") long id){
         Page page;
         if(map.get("id")!= null){
-            Long id1 = (Long) map.get("id");
+            long id1 = Long.valueOf((int)map.get("id"));
             page = pageService.findById(id1);
+            page.setContent((String) map.get("content"));
+            page.setPageName((String) map.get("name"));
             pageService.save(page);
         }
         else {
