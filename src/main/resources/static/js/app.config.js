@@ -1,8 +1,16 @@
 angular.
     module('app').
     config(
-        function ($httpProvider, $routeProvider) {
+        function ($httpProvider, $routeProvider, $translateProvider) {
             $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+            $translateProvider.useStaticFilesLoader({
+                prefix: 'js/./',
+                suffix: '.json'
+            });
+
+
+            $translateProvider.preferredLanguage('eng');
 
             $routeProvider.
                     when('/', {
@@ -26,3 +34,4 @@ angular.
                     otherwise('/');
         }
         );
+

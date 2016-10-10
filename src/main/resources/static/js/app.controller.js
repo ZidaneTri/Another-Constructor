@@ -1,6 +1,6 @@
 angular.
     module('app').
-    controller("home", function($http, $location, $scope) {
+    controller("home", function($http, $location, $scope,$translate) {
         $http.get("/user").success(function(data) {
             if (data.name) {
                 $scope.user = data.name;
@@ -26,5 +26,9 @@ angular.
                 $scope.authenticated = false;
             });
         };
+
+        $scope.changeLanguage = function (langKey) {
+            $translate.use(langKey);
+        }
     });
 

@@ -1,9 +1,9 @@
 <div class="jumbotron">
     <div class="container">
-        <h1>Page data:</h1>
+        <h1 translate>PAGE_DATA</h1>
         <input type="text" class="form-control" placeholder="Page Name" maxlength="250" ng-model="pageinfo.name">
         <summernote ng-model="pageinfo.content"></summernote>
-        <button  class="btn btn-primary btn-lg" ng-hide="!pageinfo.name.length" ng-hide="!pageinfo.content.length" ng-click="submit()">Submit</button>
+        <button  class="btn btn-primary btn-lg" ng-hide="!pageinfo.name.length" ng-hide="!pageinfo.content.length" ng-click="submit()" translate>SUBMIT</button>
         {{pageinfo.content}}
     </div>
 </div>

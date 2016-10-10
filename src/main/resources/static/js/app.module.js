@@ -1,4 +1,5 @@
 angular.module('app', [
+    'pascalprecht.translate',
     'ngRoute',
     'ngSanitize',
     'summernote',
@@ -9,3 +10,4 @@ angular.module('app', [
     'site',
     'page'
 ]);
+

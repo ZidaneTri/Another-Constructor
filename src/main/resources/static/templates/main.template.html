@@ -1,17 +1,17 @@
 <div class="jumbotron">
     <div class="container">
-        <h1>Latest sites</h1>
-        <p>You can view created sites or sign in and create your own site</p>
-        <p>The list of created sites</p>
+        <h1 translate>HEAD_MAIN</h1>
+        <p translate>MAIN_TEXT</p>
+        <p translate>MAIN_LIST_TEXT</p>
         <table st-table="info" st-safe-src="site" class="table table-striped">
             <thead>
             <tr>
-                <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>
+                <th st-sort="id">Id</th>
+                <th st-sort="siteName" translate>LIST_HEAD_SITE</th>
+                <th st-sort="user.name" translate>LIST_HEAD_USER</th>
             </tr>
             <tr>
-                <th st-sort="id">Id</th>
-                <th st-sort="siteName">Site</th>
-                <th st-sort="user.name">User</th>
+                <th colspan="5"><input st-search="" class="form-control" placeholder="Search ..." type="text"/></th>
             </tr>
             </thead>
             <tbody>
