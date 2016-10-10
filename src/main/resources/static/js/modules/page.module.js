@@ -2,18 +2,24 @@ var heh = angular.module('page', []);
 
 heh.component('page', {
     templateUrl: '/templates/page.template.html',
-    controller: function ($http, $scope, $window) {
+    controller: function ($scope,$http,$routeParams,$window) {
 
-        $scope.name = null;
+        var id = $routeParams.siteId;
+        console.log(id);
+
+        $scope.pageinfo = {
+            "name": null,
+            "content": null
+        }
 
         $scope.submit = function() {
-            console.log($scope.name);
-            $http.post('/site/save',$scope.name).success(function() {
+            console.log($scope.pageinfo);
+            $http.post('/site/page/'+ id+ '/save',$scope.pageinfo).success(function() {
                 $window.location.href = '#/userpage';
             }).error(function() {
                 console.log("Fail");
             });
         };
-    }
 
+    }
 });

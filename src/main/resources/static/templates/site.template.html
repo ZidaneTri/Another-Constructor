@@ -1,8 +1,8 @@
 <div class="jumbotron">
     <div class="container">
-        <h1>Your site: {{ name }}</h1>
+        <h1>Your site: {{ name }} {{ id }}</h1>
         <p>Pages:</p>
-        <a class="btn btn-primary btn-lg" href="#/create/site/"> Add new page</a>
+        <a class="btn btn-primary btn-lg" href="#/add/page/site/{{id}}"> Add new page</a>
         <table st-table="info" st-safe-src="pages" class="table table-striped">
             <thead>
             <tr>

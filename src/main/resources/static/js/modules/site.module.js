@@ -4,6 +4,7 @@ heh.component('site', {
     templateUrl: '/templates/site.template.html',
     controller: function ($scope,$http,$routeParams,$window) {
         siteid = $routeParams.siteId;
+        $scope.id = siteid;
 
         $http.get('/site/info/'+siteid).success(function (data) {
             if(data){

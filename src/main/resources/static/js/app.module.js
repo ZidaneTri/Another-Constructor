@@ -6,5 +6,6 @@ angular.module('app', [
     'main',
     'user',
     'create',
-    'site'
+    'site',
+    'page'
 ]);

@@ -20,6 +20,9 @@ angular.
                     when('/edit/site/:siteId', {
                         template: '<site></site>'
                     }).
+                    when('/add/page/site/:siteId', {
+                        template: '<page></page>'
+                    }).
                     otherwise('/');
         }
         );
