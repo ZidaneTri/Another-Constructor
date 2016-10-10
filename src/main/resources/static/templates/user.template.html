@@ -2,7 +2,7 @@
     <div class="container">
         <h1>Hello, {{site[0].user.name}}</h1>
         <p>This is your sites. You can choose and edit created sites or create new.</p>
-        <button type="button" class="btn btn-primary btn-lg" href="#/create/site/">Add new site</button>
+        <a  type="button" class="btn btn-success btn-lg" href="#/create/site/">Add new site</a>
         <table st-table="info" st-safe-src="site" class="table table-striped">
             <thead>
             <tr>
@@ -14,12 +14,10 @@
             <tr ng-repeat="item in info">
                 <td>{{ item.id }}</td>
                 <td>{{ item.siteName }}</td>
-                <td>
+                <td align="right">
                     <button type="button" class="btn btn-sm btn-warning">
                         Edit
                     </button>
-                </td>
-                <td>
                     <button type="button" class="btn btn-sm btn-danger">
                         <i class="glyphicon glyphicon-remove-circle">
                         </i>
@@ -28,5 +26,6 @@
             </tr>
             </tbody>
         </table>
+        <a  type="button" class="btn btn-success btn-lg" href="#/create/site/">Add new site</a>
     </div>
 </div>
