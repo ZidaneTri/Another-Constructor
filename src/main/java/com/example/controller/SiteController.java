@@ -45,10 +45,14 @@ public class SiteController {
 
     @RequestMapping(value = "/site/info/{id}", method = RequestMethod.GET)
     public @ResponseBody
-    Site viewSite( @PathVariable("id") long id){
+    Site viewSite( @PathVariable("id") long id,Authentication principal){
         Site site;
         site = siteService.findById(id);
-        return site;
+        User user = site.getUser();
+        if (user.getUserId().equals((String)principal.getCredentials()))
+            return site;
+        else
+            return null;
     }
 
     @RequestMapping(value = "/site/delete/{id}", method = RequestMethod.GET)
