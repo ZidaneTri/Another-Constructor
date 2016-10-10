@@ -17,7 +17,7 @@
             <tbody>
             <tr ng-repeat="item in info">
                 <td>{{ item.id }}</td>
-                <td>{{ item.siteName }}</td>
+                <td> <a href="#/show/site/{{ item.id }}">{{ item.siteName }}</a> </td>
                 <td>{{ item.user.name }}</td>
             </tr>
             </tbody>

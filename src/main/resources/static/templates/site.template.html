@@ -13,9 +13,9 @@
             <tr ng-repeat="item in info">
                 <td>{{ item.pageName }}</td>
                 <td>
-                    <button type="button" class="btn btn-sm btn-warning" translate>
+                    <a href="#/edit/page/{{item.id}}"class="btn btn-sm btn-warning" translate>
                         EDIT
-                    </button>
+                    </a>
                 </td>
                 <td>
                     <button type="button" class="btn btn-sm btn-danger" ng-click="removeItem(item)">
