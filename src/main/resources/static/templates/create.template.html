@@ -1,7 +1,7 @@
 <div class="jumbotron">
     <div class="container">
         <h1>Type site name here:</h1>
-        <input type="text" size="40">
-        <p>{{params.siteId}}</p>
+        <input type="text" class="form-control" placeholder="My Site" maxlength="250" ng-model="name">
+        <button  class="btn btn-primary btn-lg" ng-hide="somefield.length" ng-click="submit()">Submit</button>
     </div>
 </div>

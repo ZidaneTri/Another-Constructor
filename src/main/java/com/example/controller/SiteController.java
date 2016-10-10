@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -61,10 +63,11 @@ public class SiteController {
     }
 
     @RequestMapping(value = "/site/save", method = RequestMethod.POST)
-    public void saveSite(@RequestBody Map map, Authentication principal){
+    public void saveSite(@RequestBody Map map, Authentication principal,HttpServletResponse response)throws IOException{
         Site site = new Site();
         site.setSiteName((String)map.get("name"));
         site.setUser(userService.findByUserId((String)principal.getCredentials()));
         siteService.save(site);
+        response.sendRedirect("/#/userpage");
     }
 }
