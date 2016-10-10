@@ -6,10 +6,9 @@ heh.component('site', {
         siteid = $routeParams.siteId;
 
         $http.get('/site/info/'+siteid).success(function (data) {
-            if(data=null){
+            if(data){
                 $scope.name = data.siteName;
                 $http.get('/site/pages/'+siteid).success(function (data) {
-                    console.log(data);
                     $scope.pages = data;
                 });
             }else {
@@ -26,7 +25,6 @@ heh.component('site', {
             var id = $scope.pages[index].id;
             $http.get('/site/page/'+id+'/delete').success(function () {
                 if (index !== -1) {
-                    console.log("all good")
                     $scope.pages.splice(index, 1);
                 }
             });
