@@ -63,11 +63,10 @@ public class SiteController {
     }
 
     @RequestMapping(value = "/site/save", method = RequestMethod.POST)
-    public void saveSite(@RequestBody Map map, Authentication principal,HttpServletResponse response)throws IOException{
+    public void saveSite(@RequestBody String name, Authentication principal,HttpServletResponse response)throws IOException{
         Site site = new Site();
-        site.setSiteName((String)map.get("name"));
+        site.setSiteName(name);
         site.setUser(userService.findByUserId((String)principal.getCredentials()));
         siteService.save(site);
-        response.sendRedirect("/#/userpage");
     }
 }

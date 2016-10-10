@@ -2,13 +2,14 @@ var heh = angular.module('create', []);
 
 heh.component('create', {
     templateUrl: '/templates/create.template.html',
-    controller: function ($http, $scope, $routeParams) {
+    controller: function ($http, $scope, $window) {
 
         $scope.name = null;
 
         $scope.submit = function() {
-            $http.post('/site/save',angular.toJson(name)).success(function() {
-                console.log("Win");
+            console.log($scope.name);
+            $http.post('/site/save',$scope.name).success(function() {
+                $window.location.href = '#/userpage';
             }).error(function() {
                 console.log("Fail");
             });
