@@ -15,7 +15,7 @@ public class PageServiceImpl implements PageService{
     private PageRepository pageRepository;
 
     @Override
-    public List<Page> findById(long id) {
+    public Page findById(long id) {
         return pageRepository.findById(id);
     }
 

@@ -7,7 +7,7 @@ import com.example.model.Site;
 import java.util.List;
 
 public interface PageService {
-    List<Page> findById(long id);
+    Page findById(long id);
 
     List<Page> findBySite(Site site);
 

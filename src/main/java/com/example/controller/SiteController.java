@@ -51,7 +51,7 @@ public class SiteController {
         return site;
     }
 
-    @RequestMapping(value = "/site/delete/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/site/{id}/delete", method = RequestMethod.GET)
     public void deleteSite(@PathVariable("id")long id){
         siteService.delete(id);
     }
