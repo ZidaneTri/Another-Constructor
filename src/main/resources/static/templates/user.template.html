@@ -1,13 +1,13 @@
 <div class="jumbotron">
     <div class="container">
-        <h1>Hello, {{site[0].user.name}}</h1>
-        <p>This is your sites. You can choose and edit created sites or create new.</p>
-        <a class="btn btn-primary btn-lg" href="#/create/site/"> Add new site</a>
+        <h1 translate="HELLO"> {{site[0].user.name}}</h1>
+        <p translate>USER_TEXT</p>
+        <a class="btn btn-primary btn-lg" href="#/create/site/" translate> ADD_SITE</a>
         <table st-table="info" st-safe-src="site" class="table table-striped">
             <thead>
             <tr>
                 <th st-sort="item.id">Id</th>
-                <th st-sort="item.siteName">Sites</th>
+                <th st-sort="item.siteName" translate>LIST_HEAD_SITE</th>
             </tr>
             </thead>
             <tbody>
@@ -15,8 +15,8 @@
                 <td>{{ item.id }}</td>
                 <td>{{ item.siteName }}</td>
                 <td>
-                    <a href="#/edit/site/{{ item.id }}" class="btn btn-sm btn-warning">
-                        Edit
+                    <a href="#/edit/site/{{ item.id }}" class="btn btn-sm btn-warning" translate>
+                        EDIT
                     </a>
                 </td>
                 <td>
