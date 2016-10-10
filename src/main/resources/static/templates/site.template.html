@@ -1,0 +1,30 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1>Your site: {{siteName}}</h1>
+        <p>Pages:</p>
+        <a class="btn btn-primary btn-lg" href="#/create/site/"> Add new page</a>
+        <table st-table="info" st-safe-src="pages" class="table table-striped">
+            <thead>
+            <tr>
+                <th st-sort="item.pageName">Page</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in info">
+                <td>{{ item.pageName }}</td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-warning">
+                        Edit
+                    </button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-danger">
+                        <i class="glyphicon glyphicon-remove-circle">
+                        </i>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
