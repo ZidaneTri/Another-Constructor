@@ -24,7 +24,7 @@ public class PageController {
     @Autowired
     PageService pageService;
 
-    @RequestMapping(value = "/site/{site_name}/page", method = RequestMethod.GET)
+    @RequestMapping(value = "/site/{site_name}/pages", method = RequestMethod.GET)
     public @ResponseBody
     List<Page> getSitePages(@PathVariable("site_name") Site site){
         List<Page> pages;
